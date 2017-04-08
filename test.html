@@ -2,19 +2,138 @@
 <html>
 <script src="jquery-3.2.0.js"></script>
 <script src="test.js"></script>
+<head>
+<style>
+.checkbox-grid {
+  /*  display: block;
+    float: left;
+    width: 25%*/
 
+    -webkit-column-count: 8; /* Chrome, Safari, Opera */
+      -moz-column-count: 8; /* Firefox */
+      column-count: 8;
+}
+label {
+  display: inline-block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+
+
+</style>
+</head>
 <body>
 
 <form action="">
-<input type="checkbox" name="ingredient" value="Onion">Onion<br>
-<input type="checkbox" name="ingredient" value="Chicken">Chicken<br>
-<input type="checkbox" name="ingredient" value="Tomato">Tomato 
+<div class="checkbox-grid">
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Wheat Flour">Wheat Flour<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Macaroni">Macaroni<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Wheat Cereal">Wheat Cereal<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Corn Flakes">Corn Flakes<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Corn Meal">Corn Meal<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Hominy Grits">Hominy Grits<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Rice">Rice<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Rolled Oats">Rolled Oats<br></span>
 
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="White Bread">White Bread<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Whole Wheat Bread">Whole Wheat Bread<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Rye Bread">Rye Bread<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pound Cake">Pound Cake<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Soda Crackers">Soda Crackers<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Milk">Milk<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Evaporated Milk">Evaporated Milk<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Butter">Butter<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Oleomargarine">Oleomargarine<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Eggs">Eggs<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Cheese (Cheddar)">Cheese (Cheddar)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Cream">Cream<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Peanut Butter">Peanut Butter<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Mayonnaise">Mayonnaise<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Crisco">Crisco<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Lard">Lard<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Sirloin Steak">Sirloin Steak<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Round Steak">Round Steak<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Rib Roast">Rib Roast<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Chuck Roast">Chuck Roast<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Plate">Plate<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Liver (Beef)">Liver (Beef)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Leg of Lamb">Leg of Lamb<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Lamb Chops (Rib)">Lamb Chops (Rib)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pork Chops">Pork Chops<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pork Loin Roast">Pork Loin Roast<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Bacon">Bacon<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Ham">Ham<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Salt Pork">Salt Pork<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Roasting Chicken">Roasting Chicken<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Veal Cutlets">Veal Cutlets<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Salmon">Salmon<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Apples">Apples<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Bananas">Bananas<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Lemons">Lemons<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Oranges">Oranges<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Green Beans">Green Beans<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Cabbage">Cabbage<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Carrots">Carrots<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Celery">Celery<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Lettuce">Lettuce<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Onions">Onions<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Potatoes">Potatoes<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Spinach">Spinach<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Sweet Potatoes">Sweet Potatoes<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Peaches (can)">Peaches (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pears (can)">Pears (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pineapple (can)">Pineapple (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Asparagus (can)">Asparagus (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Green Beans (can)">Green Beans (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Pork and Beans (can)">Pork and Beans (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Corn (can)">Corn (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Peas (can)">Peas (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Tomatoes (can)">Tomatoes (can)<br></span>
+
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Tomato Soup (can)">Tomato Soup (can)<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Peaches">Peaches, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Prunes">Prunes, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Raisins">Raisins, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Peas">Peas, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Lima Beans">Lima Beans, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Navy Beans">Navy Beans, Dried<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Coffee">Coffee<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Tea">Tea<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Cocoa">Cocoa<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Chocolate">Chocolate<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Sugar">Sugar<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Corn Syrup">Corn Syrup<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Molasses">Molasses<br></span>
+  <span style="white-space: nowrap;"><input type="checkbox" onclick="handleClick(this)" name="food[]" value="Strawberry Preserves">Strawberry Preserves<br></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
 <button type="button" id="click">Click Me!</button>
 
-<br></br>
-<br></br>
-<br></br>
+</br>
+</br>
+</br>
 <style>
 .clickMe {
     -moz-appearance: button;
@@ -32,10 +151,8 @@
 
 </form>
 
-<br></br>
+</br>
 
 
 </body>
 </html>
-
-
