@@ -8,10 +8,11 @@ from app import app
 def index():
     print "OKAY"
     if request.method == 'POST':
-        jsdata = request.args.get('indexes')
-        print "JSDATA",jsdata
-	print "POST"
-        prices = simplex()
+        jsdata = request.form
+        indexes = []
+        for t in jsdata:
+            indexes.append(int(jsdata[t]))
+        prices = simplex(indexes)
         total = 0
         for f,p in prices:
             total += p
@@ -22,7 +23,7 @@ def index():
         return render_template('test.html',foodPrices=prices,total=total)
 
 
-def simplex():
+def simplex(indexes):
   # Commodity, Unit, 1939 price (cents), Calories, Protein (g), Calcium (g), Iron (mg),
   # Vitamin A (IU), Thiamine (mg), Riboflavin (mg), Niacin (mg), Ascorbic Acid (mg)
   data = [
@@ -117,7 +118,6 @@ def simplex():
       ['Vitamin C (mg)', 75]]
 
 
-  indexes = [24,6]
   numChoices = len(indexes)
   calories = [0] * len(indexes)
   for i in range(0,numChoices):
